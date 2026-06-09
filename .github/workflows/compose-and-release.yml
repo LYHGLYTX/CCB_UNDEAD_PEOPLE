@@ -28,7 +28,7 @@ jobs:
       - name: Compose tileset
         run: |
           export SOURCE="${{ github.workspace }}"
-          export DEST="${{ github.workspace }}/gfx/Chibi_Ultica"
+          export DEST="${{ github.workspace }}/gfx/UNDEAD_PEOPLE"
           mkdir -p "$DEST"
           # --use-all 与官方 ChibiUltica compose 参数保持一致
           python3 tools/gfx_tools/compose.py --use-all --feedback CONCISE --format-json --loglevel INFO "$SOURCE" "$DEST"
@@ -42,15 +42,15 @@ jobs:
       - name: Package tileset ZIP
         run: |
           cd "${{ github.workspace }}/gfx"
-          zip -r -q "${{ github.workspace }}/CCB-ChibiUltica.zip" Chibi_Ultica
+          zip -r -q "${{ github.workspace }}/CCB_UNDEAD_PEOPLE.zip" UNDEAD_PEOPLE
           echo "=== zip contents ==="
-          unzip -l "${{ github.workspace }}/CCB-ChibiUltica.zip" | head -20
+          unzip -l "${{ github.workspace }}/CCB_UNDEAD_PEOPLE.zip" | head -20
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: CCB-ChibiUltica
-          path: gfx/Chibi_Ultica/*
+          name: CCB_UNDEAD_PEOPLE
+          path: gfx/UNDEAD_PEOPLE/*
 
       - name: Compute release tag
         id: tag

@@ -1,5 +1,5 @@
-NAME: CCB Chibi_Ultica
-VIEW: CCB Chibi_Ultica
+NAME: UNDEAD_PEOPLE
+VIEW: CCB_UNDEAD_PEOPLE
 JSON: tile_config.json
 TILESET: tiles.png
 
